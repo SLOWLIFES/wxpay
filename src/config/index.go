@@ -69,7 +69,7 @@ func (m V3) Request(api string, body interface{}, out interface{}) error {
 // @param url string 请求地址
 // @param body interface 请求数据
 func (m V3) Sign(url string, body interface{}) (string, error) {
-	var data string = ""
+	var data = ""
 	var method = "GET"
 	t := time.Now().Unix()
 	randomStr := utils.RandomStr()
