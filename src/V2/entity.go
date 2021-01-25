@@ -1,6 +1,8 @@
 package V2
 
-import "errors"
+import (
+	"errors"
+)
 
 // APIClientPath 微信支付API证书
 type APIClientPath struct {
@@ -107,9 +109,14 @@ type PublicResponse struct {
 
 // ResultCheck 检查是否返回成功
 func (m PublicResponse) ResultCheck() error {
+	//s ,_ :=json.Marshal(m)
+	//log.Println(string(s))
 	if m.ReturnCode == "FAIL" {
-		if m.ResultMsg != "" {
+		if m.ReturnMsg != "" {
 			return errors.New(m.ReturnMsg)
+		}
+		if m.ResultMsg != "" {
+			return errors.New(m.ResultMsg)
 		}
 		return errors.New(m.ErrorMsg)
 	} else if m.ResultCode == "FAIL" {
