@@ -24,3 +24,10 @@ type APIClientPath struct {
 	Key  string // 私钥证书路径,使用V3接口必传
 	Root string // 根证书路径
 }
+
+// APIClientData 微信支付API证书
+type APIClientData struct {
+	Cert []byte // 证书路径
+	Key  []byte // 私钥证书路径,使用V3接口必传
+	Root []byte // 根证书路径
+}

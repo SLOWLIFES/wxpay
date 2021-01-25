@@ -13,8 +13,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/wleven/wxpay/src/entity"
-	"github.com/wleven/wxpay/utils"
+	"github.com/SLOWLIFES/wxpay/src/entity"
+	"github.com/SLOWLIFES/wxpay/utils"
 )
 
 // WxPay 微信支付
@@ -41,8 +41,9 @@ func (c WxPay) request(url string, body io.Reader, cert bool) (map[string]string
 
 		client = http.Client{Transport: &http.Transport{
 			TLSClientConfig: &tls.Config{
-				RootCAs:      pool,
-				Certificates: []tls.Certificate{certs},
+				RootCAs:            pool,
+				Certificates:       []tls.Certificate{certs},
+				InsecureSkipVerify: true,
 			},
 		}}
 	}

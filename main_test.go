@@ -7,9 +7,9 @@
 package WXPay
 
 import (
-	"github.com/wleven/wxpay/global"
-	"github.com/wleven/wxpay/src/V2"
-	"github.com/wleven/wxpay/src/V3/smartGuide"
+	"github.com/SLOWLIFES/wxpay/global"
+	"github.com/SLOWLIFES/wxpay/src/V2"
+	"github.com/SLOWLIFES/wxpay/src/V3/smartGuide"
 	"testing"
 )
 
